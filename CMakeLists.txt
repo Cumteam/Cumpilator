@@ -13,3 +13,4 @@ project ("Cumpilator")
 
 # Incluez les sous-projets.
 add_subdirectory ("cumpilator_cli")
+add_subdirectory ("cum_lib")
