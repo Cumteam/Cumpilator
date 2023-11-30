@@ -12,4 +12,4 @@ endif()
 project ("Cumpilator")
 
 # Incluez les sous-projets.
-add_subdirectory ("Cumpilator")
+add_subdirectory ("cumpilator_cli")
