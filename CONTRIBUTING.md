@@ -70,12 +70,12 @@ private:
 	string password;
 };
 
-__interface EmailSender {
+class EmailSender {
 public:
 	void sendEmail(string subject, string content);
 };
 
-__interface SMSSender {
+class SMSSender {
 public:
 	void sendSMS(string content);
 };
@@ -198,7 +198,8 @@ Ici la classe Hand est ouverte pour l'extension, mais fermée pour la modificatio
 Cas de bonne pratique :
 
 ```cpp
-__interface Executable{
+class Executable{
+public:
 	void open();
 	void close();
 	bool isOpen();
@@ -325,7 +326,8 @@ Parce que si on utilise un objet de type Rectangle, on peut modifier sa largeur 
 Cas de bonne pratique :
 
 ```cpp
-__interface Shape {
+class Shape {
+public:
 	void setWidth(int width);
 	void setHeight(int height);
 	int getWidth();
@@ -400,7 +402,8 @@ Il faut donc découper les interfaces en plusieurs interfaces plus petites et plu
 Cas de mauvaise pratique :
 
 ```cpp
-__interface Worker {
+class Worker {
+public:
 	void work();
 	void eat();
 };
@@ -433,11 +436,13 @@ Ici la classe Human et la classe Robot implémentent l'interface Worker, mais ell
 Cas de bonne pratique :
 
 ```cpp
-__interface Worker {
+class Worker {
+public:
 	void work();
 };
 
-__interface Eater {
+class Eater {
+public:
 	void eat();
 };
 
@@ -496,7 +501,8 @@ Ici la classe User dépend de la classe MySQL, mais elle ne respecte pas le princ
 Cas de bonne pratique :
 
 ```cpp
-__interface Database {
+class Database {
+public:
 	void connect();
 };
 
