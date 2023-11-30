@@ -3,7 +3,7 @@
 #
 
 # Ajoutez une source à l'exécutable de ce projet.
-add_executable (Cumpilator "Cumpilator.cpp" "Cumpilator.h")
+add_executable (Cumpilator "src/main.cpp" )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET Cumpilator PROPERTY CXX_STANDARD 20)
