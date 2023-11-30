@@ -11,5 +11,5 @@ endif()
 
 project ("Cumpilator")
 
-# Incluez les sous-projets.
+# Incluez les sous-	projets.
 add_subdirectory ("Cumpilator")
