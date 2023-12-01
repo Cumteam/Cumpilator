@@ -2,7 +2,7 @@
  * @file preprocessor_lexer.hpp
  * @author Mideky
  * @brief
- *	Le lexer du préprocesseur C++ permet de transformer un fichier texte en une liste de token.
+ *	Le lexer du prï¿½processeur C++ permet de transformer un fichier texte en une liste de token.
  *
  * @version 0.1
  * @date 2023-12-01
@@ -10,8 +10,6 @@
  * @copyright Copyright (c) 2023
  */
 #pragma once
-
-#include "../../general/token.hpp"
 
 namespace cumpilator {
 	class file_entry;
