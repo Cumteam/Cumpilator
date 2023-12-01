@@ -36,12 +36,7 @@ namespace cli
 			virtual std::string get_help_message() const;
 
 			/// @brief Execute the command.
-			virtual void execute();
-
-		protected:
-			std::string name;
-			std::string alias;
-			std::vector<std::string> arguments;
+			virtual std::pair<bool, std::string> execute() const;
 		};
 	}
 }
