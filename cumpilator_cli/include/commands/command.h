@@ -18,8 +18,11 @@ namespace cli
 			/// @param name Name of the command. This will be used to call the command.
 			/// @param alias Shorter name for the command.
 			/// @param arguments The arguments for the command.
-			command(std::string name, std::string alias, std::vector<std::string> arguments);
+			command();
 			virtual ~command();
+
+
+			virtual std::pair<bool, std::string> parse_arguments(const std::vector<std::string>& args) const;
 
 			/// @brief Get the name of the command.
 			/// @return The name of the command.
