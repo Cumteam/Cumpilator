@@ -4,6 +4,7 @@
 /// The command class is used to represent a command argument.
 
 #include <string>
+#include <vector>
 
 namespace cumpilator_cli
 {
@@ -11,16 +12,27 @@ namespace cumpilator_cli
 	class command
 	{
 	public:
-		command();
+		/// @brief Construct a new command object.
+		/// @param name Name of the command. This will be used to call the command.
+		/// @param alias Shorter name for the command.
+		/// @param arguments The arguments for the command.
+		command(std::string name, std::string alias, std::vector<std::string> arguments);
 		virtual ~command();
 
 		/// @brief Get the name of the command.
 		/// @return The name of the command.
 		virtual std::string get_name() const;
 
-		virtual void execute() = 0;
+		/// @brief Get the alias of the command.
+		/// @return The alias of the command.
+		virtual std::string get_alias() const;
 
-	private:
+		/// @brief Execute the command.
+		virtual void execute();
+
+	protected:
 		std::string name;
+		std::string alias;
+		std::vector<std::string> arguments;
 	};
 }
