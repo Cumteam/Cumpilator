@@ -32,6 +32,9 @@ namespace cli
 			/// @return The alias of the command.
 			virtual std::string get_alias() const;
 
+			/// @brief Get the help message
+			virtual std::string get_help_message() const;
+
 			/// @brief Execute the command.
 			virtual void execute();
 
