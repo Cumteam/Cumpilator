@@ -7,7 +7,7 @@ add_library (
 	"include/general/token.hpp"
 	"include/preprocessor/lexer/preprocessor_lexer.hpp"
 	"include/preprocessor/parser/preprocessor_parser.hpp"
-	"include/constants.hpp"
+	"include/constant.hpp"
 	"src/cum_lib.cpp"
 )
 
