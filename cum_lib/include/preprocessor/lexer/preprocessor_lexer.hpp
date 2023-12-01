@@ -1,9 +1,9 @@
 /**
  * @file preprocessor_lexer.hpp
  * @author Mideky
- * @brief 
- *	Preprocessor lexer is a lexer that is used to lex the preprocessor directives in C++ source code.
- * 
+ * @brief
+ *	Le lexer du pr�processeur C++ permet de transformer un fichier texte en une liste de token.
+ *
  * @version 0.1
  * @date 2023-12-01
  *
