@@ -6,7 +6,15 @@
 #include <string>
 #include <vector>
 
+#include "command.h"
+
 namespace cli
 {
+	namespace commands
+	{
+		class build : public command
+		{
 
+		};
+	}
 }

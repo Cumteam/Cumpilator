@@ -8,31 +8,34 @@
 
 namespace cli
 {
-	/// @brief The base class for all commands.
-	class command
+	namespace commands
 	{
-	public:
-		/// @brief Construct a new command object.
-		/// @param name Name of the command. This will be used to call the command.
-		/// @param alias Shorter name for the command.
-		/// @param arguments The arguments for the command.
-		command(std::string name, std::string alias, std::vector<std::string> arguments);
-		virtual ~command();
+		/// @brief The base class for all commands.
+		class command
+		{
+		public:
+			/// @brief Construct a new command object.
+			/// @param name Name of the command. This will be used to call the command.
+			/// @param alias Shorter name for the command.
+			/// @param arguments The arguments for the command.
+			command(std::string name, std::string alias, std::vector<std::string> arguments);
+			virtual ~command();
 
-		/// @brief Get the name of the command.
-		/// @return The name of the command.
-		virtual std::string get_name() const;
+			/// @brief Get the name of the command.
+			/// @return The name of the command.
+			virtual std::string get_name() const;
 
-		/// @brief Get the alias of the command.
-		/// @return The alias of the command.
-		virtual std::string get_alias() const;
+			/// @brief Get the alias of the command.
+			/// @return The alias of the command.
+			virtual std::string get_alias() const;
 
-		/// @brief Execute the command.
-		virtual void execute();
+			/// @brief Execute the command.
+			virtual void execute();
 
-	protected:
-		std::string name;
-		std::string alias;
-		std::vector<std::string> arguments;
-	};
+		protected:
+			std::string name;
+			std::string alias;
+			std::vector<std::string> arguments;
+		};
+	}
 }
