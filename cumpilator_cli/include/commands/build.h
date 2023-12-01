@@ -12,6 +12,23 @@ namespace cli
 {
 	namespace commands
 	{
+		struct build_option
+		{
+			enum class type
+			{
+				output,
+				output_format,
+				assembly,
+				include_path,
+				library_path,
+				link,
+				no_std_lib
+			};
+
+			type m_type;
+			std::string m_value;
+		};
+
 		class build : public command
 		{
 		public:
@@ -26,7 +43,7 @@ namespace cli
 			std::pair<bool, std::string> execute() const override;
 
 		private:
-			std::vector<std::string> m_options;
+			std::vector<build_option> m_options;
 			std::vector<std::string> m_files;
 		};
 	}
