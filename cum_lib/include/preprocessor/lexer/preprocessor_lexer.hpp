@@ -11,12 +11,18 @@
  */
 #pragma once
 
-class preprocessor_lexer
-{
-public:
-	preprocessor_lexer() = delete;
-	~preprocessor_lexer() = delete;
-private:
+namespace cumpilator {
+	class file_entry;
+	class preprocessor;
 	
-};
+	class preprocessor_lexer
+	{
+	protected:
+		preprocessor_lexer() = delete;
+		~preprocessor_lexer() = delete;
+	private:
+
+	};
+	
+}	// !namespace cumpilator
 
