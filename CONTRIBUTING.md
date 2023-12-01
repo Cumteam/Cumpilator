@@ -70,27 +70,37 @@ private:
 	string password;
 };
 
-class EmailSender {
+class Email {
 public:
-	void sendEmail(string subject, string content);
+	Email(string subject, string content) {
+		this->subject = subject;
+		this->content = content;
+	}
+private:
+string subject;
+	string content;
 };
 
-class SMSSender {
+class SMS {
 public:
-	void sendSMS(string content);
+	SMS(string content) {
+		this->content = content;
+	}
+private:
+	string content;
 };
 
-class EmailSenderImpl : public EmailSender {
+class SMSSender : public SMS {
 public:
-	void sendEmail(string subject, string content) {
-		// Envoie un email à l'utilisateur
+	void send(User user) {
+		// Envoie un SMS à l'utilisateur
 	}
 };
 
-class SMSSenderImpl : public SMSSender {
+class EmailSender : public Email {
 public:
-	void sendSMS(string content) {
-		// Envoie un SMS à l'utilisateur
+	void send(User user) {
+		// Envoie un email à l'utilisateur
 	}
 };
 ```
@@ -200,9 +210,9 @@ Cas de bonne pratique :
 ```cpp
 class Executable{
 public:
-	void open();
-	void close();
-	bool isOpen();
+	virtual void open() = 0;
+	virtual void close() = 0;
+	virtual bool isOpen() = 0;
 };
 
 class Door : public Executable {
@@ -328,11 +338,11 @@ Cas de bonne pratique :
 ```cpp
 class Shape {
 public:
-	void setWidth(int width);
-	void setHeight(int height);
-	int getWidth();
-	int getHeight();
-	int getArea();
+	virtual void setWidth(int width) = 0;
+	virtual void setHeight(int height) = 0;
+	virtual int getWidth() = 0;
+	virtual int getHeight() = 0;
+	virtual int getArea() = 0;
 };
 
 class Rectangle : public Shape {
@@ -404,8 +414,8 @@ Cas de mauvaise pratique :
 ```cpp
 class Worker {
 public:
-	void work();
-	void eat();
+	virtual void work() = 0;
+	virtual void eat() = 0;
 };
 
 class Human : public Worker {
@@ -438,12 +448,12 @@ Cas de bonne pratique :
 ```cpp
 class Worker {
 public:
-	void work();
+	virtual void work() = 0;
 };
 
 class Eater {
 public:
-	void eat();
+	virtual void eat() = 0;
 };
 
 class Human : public Worker, public Eater {
@@ -503,7 +513,7 @@ Cas de bonne pratique :
 ```cpp
 class Database {
 public:
-	void connect();
+	virtual void connect() = 0;
 };
 
 class MySQL : public Database {
