@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-namespace cumpilator_cli
+namespace cli
 {
 	/// @brief The base class for all commands.
 	class command
