@@ -4,6 +4,8 @@
 	"include/commands/command.h"
 	"include/commands/help.h"
 	"include/commands/version.h"
+	"include/error.h"
+	"src/error.cpp"
 	"src/main.cpp"
 )
 
