@@ -1,5 +1,4 @@
 ﻿add_executable (cum
-	"include/argument.h"
 	"include/commands/build.h"
 	"include/commands/command.h"
 	"include/commands/help.h"
