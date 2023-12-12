@@ -8,6 +8,7 @@
 
 namespace cli
 {
+	/// @brief The error codes used by the CLI library.
 	enum class error : uint32_t
 	{
 		/// @brief No error.
@@ -41,6 +42,7 @@ namespace cli
 		unexpected_argument,
 	};
 
+	/// @brief The error category used by the CLI library.
 	class error_category : public std::error_category
 	{
 	public:
@@ -49,6 +51,9 @@ namespace cli
 		std::string message(int ev) const override;
 	};
 
+	/// @brief Create a generic error code from a CLI error.
+	/// @param e CLI error.
+	/// @return Generic error code.
 	std::error_code make_error_code(error e);
 }
 
