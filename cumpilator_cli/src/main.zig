@@ -35,11 +35,10 @@ pub fn main() !void {
         .options = null,
     });
 
-    const argv = try std.process.argsAlloc(allocator);
-    defer std.process.argsFree(allocator, argv);
+    // Console arguments initialization
+    var args = try std.process.ArgIterator.initWithAllocator(allocator);
+    defer args.deinit();
 
-    print("argc: {d}\n", .{argv.len});
-    for (argv) |arg| {
-        print("arg: {s}\n", .{arg});
-    }
+    // Parse arguments
+    try parser.parse(&args);
 }
