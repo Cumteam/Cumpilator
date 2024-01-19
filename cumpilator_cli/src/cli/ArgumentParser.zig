@@ -37,6 +37,23 @@ pub const ArgumentParser = struct {
 
         try self.commands.put(command.name, command);
     }
+
+    pub fn parse(self: *ArgumentParser, args: *std.process.ArgIterator) !void {
+        var arg = args.next();
+
+        // Skip the first argument, which is the program name.
+        arg = args.next();
+
+        // Find the command used by the user by its name.
+        var command: ?Command = null;
+        if (arg) |inputCommandName| {
+            command = self.commands.get(inputCommandName);
+            if (command == null)
+                return error.InvalidCommand;
+        } else {
+            return error.MissingCommand;
+        }
+    }
 };
 
 test "addCommand with duplicate name" {
