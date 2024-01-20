@@ -1,15 +1,18 @@
 const std = @import("std");
 
 const Command = @import("Command.zig").Command;
+const ResultCommand = @import("Result.zig").ResultCommand;
 
 pub const ArgumentParser = struct {
     allocator: std.mem.Allocator,
     commands: std.StringHashMap(Command),
+    result: ResultCommand,
 
     pub fn init(allocator: std.mem.Allocator) ArgumentParser {
         return ArgumentParser{
             .allocator = allocator,
             .commands = std.StringHashMap(Command).init(allocator),
+            .result = .{ .commandName = undefined, .options = null },
         };
     }
 
