@@ -24,11 +24,15 @@ pub const ArgumentParser = struct {
 
         // Check if the command has an anonymous option.
         // If it does, it must be the only option.
+        // Its type must not be void.
         if (command.options) |options| {
             var hasAnonymousOption = false;
             for (options) |option| {
-                if (option.hasName == false)
+                if (option.hasName == false) {
                     hasAnonymousOption = true;
+                    if (option.type == .Void)
+                        return error.InvalidArgument;
+                }
             }
 
             if (hasAnonymousOption and options.len > 1)
